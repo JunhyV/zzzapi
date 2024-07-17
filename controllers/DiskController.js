@@ -2,6 +2,7 @@ const Disk = require('../models/Disk');
 
 // Add register
 exports.newDisk = async (req, res) => {
+
     const disk = new Disk(req.body);
 
     try {
