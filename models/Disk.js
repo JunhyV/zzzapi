@@ -1,23 +1,12 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+// Model design
 const DiskSchema = new Schema({
-    name: {
-        type: String,
-        trim: true
-    },
-    set2: {
-        type: String,
-        trim: true
-    },
-    set4: {
-        type: String,
-        trim: true
-    },
-    img: {
-        type: String,
-        trim: true
-    }
-})
+  name: String,
+  set2: String,
+  set4: String,
+  img: String,
+});
 
-module.exports = mongoose.model('Disk', DiskSchema);
+module.exports = mongoose.model("Disk", DiskSchema);

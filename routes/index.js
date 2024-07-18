@@ -1,15 +1,22 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
-const DiskController = require('../controllers/DiskController');
+const DiskController = require("../controllers/DiskController");
 
 module.exports = function () {
-    router.get('/', (req, res) => {
-        res.send('inico');
-    })
+  router.get("/", (req, res) => {
+    res.send("Home Page");
+  });
 
-    // Post conection
-    router.post('/disks', DiskController.newDisk);
+  // Disk connections
+  router.post("/disks", DiskController.newDisk);
 
-    return router;
-}
+  router.get('/disks', DiskController.showDisks);
+  router.get('/disks/:idDisk', DiskController.showDisk);
+
+  router.put('/disks/:idDisk', DiskController.updateDisk);
+
+  router.delete('/disks/:idDisk', DiskController.deleteDisk);
+
+  return router;
+};
