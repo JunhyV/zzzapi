@@ -1,24 +1,23 @@
 const express = require("express");
 const routes = require("./routes");
 const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
 const cors = require("cors");
 
 // Permitir solicitudes desde tu dominio de Vercel y localhost
 const allowedOrigins = [
   "https://zenless-guide.vercel.app",
+  "http://localhost:5173"
 ];
 
 // Cargar variables de entorno desde .env
 require("dotenv").config();
 
 const PORT = process.env.PORT || 5000;
-
-// Conectar a MongoDB
 const uri = process.env.DB_URL;
 
+// Conectar a MongoDB
 mongoose
-  .connect(uri)
+  .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log("Conexión a MongoDB exitosa");
   })
@@ -29,9 +28,9 @@ mongoose
 // Crear el servidor
 const app = express();
 
-// Habilitar Body Parser
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+// Habilitar el análisis del cuerpo de las solicitudes
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Configurar CORS
 app.use(
@@ -40,7 +39,7 @@ app.use(
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
-        callback(new Error("Not allowed by CORS"));
+        callback(new Error("Acceso bloqueado por CORS"));
       }
     },
   })
