@@ -5,7 +5,7 @@ const disksRoutes = require('./disksRoutes');
 router.use('/', disksRoutes);
 
 router.get('/', (req, res) => {
-  res.send('Home route');
+  res.send('Lista de APIs');
 });
 
 module.exports = router
