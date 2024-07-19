@@ -1,22 +1,14 @@
-const express = require("express");
-const router = express.Router();
+const express = require('express');
+const disksRoutes = require('./disksRoutes');
 
-const DiskController = require("../controllers/DiskController");
+module.exports = function() {
+  const router = express.Router();
 
-module.exports = function () {
-  router.get("/", (req, res) => {
-    res.send("New on Vercel");
+  router.use('/', disksRoutes);
+
+  router.get('/', (req, res) => {
+    res.send('Home route');
   });
-
-  // Disk connections
-  router.post("/disks", DiskController.newDisk);
-
-  router.get('/disks', DiskController.showDisks);
-  router.get('/disks/:idDisk', DiskController.showDisk);
-
-  router.put('/disks/:idDisk', DiskController.updateDisk);
-
-  router.delete('/disks/:idDisk', DiskController.deleteDisk);
 
   return router;
 };
