@@ -1,4 +1,5 @@
 const express = require("express");
+const app = express();
 const routes = require("./routes/routes");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -25,9 +26,6 @@ mongoose
     console.error("Error al conectar a MongoDB:", err);
   });
 
-// Crear el servidor
-const app = express();
-
 // Habilitar el análisis del cuerpo de las solicitudes
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -46,7 +44,7 @@ app.use(
 );
 
 // Rutas de la app
-app.use("/", routes());
+app.use("/", routes);
 
 // Puerto
 app.listen(PORT, () => {
