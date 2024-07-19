@@ -10,5 +10,12 @@ module.exports = function() {
     res.send('Home route');
   });
 
+  router.get('/test', (req, res) => {
+    res.send('Test page');
+  })
+  router.get('/api/', (req, res) => {
+    res.send('api test');
+  })
+
   return router;
 };
