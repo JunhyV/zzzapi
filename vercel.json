@@ -2,30 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "index.js",
+      "src": "./index.js",
       "use": "@vercel/node"
     }
   ],
-  "rewrites": [
+  "routes": [
     {
-      "source": "/disks/(.*)",
-      "destination": "/disks/$1"
-    },
-    {
-      "source": "/agents/(.*)",
-      "destination": "/agents/$1"
-    },
-    {
-      "source": "/bangboos/(.*)",
-      "destination": "/bangboos/$1"
-    },
-    {
-      "source": "/engines/(.*)",
-      "destination": "/engines/$1"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/$1"
+      "src": "/(.*)",
+      "dest": "/"
     }
   ]
 }
