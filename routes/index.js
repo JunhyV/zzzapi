@@ -5,7 +5,7 @@ const DiskController = require("../controllers/DiskController");
 
 module.exports = function () {
   router.get("/", (req, res) => {
-    res.send("Home Page Actualizado");
+    res.send("Now vercel");
   });
 
   // Disk connections
