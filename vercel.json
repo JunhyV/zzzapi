@@ -9,11 +9,11 @@
   "routes": [
     {
       "src": "/disks(.*)",
-      "dest": "/disks"
+      "dest": "/disks$1"
     },
     {
       "src": "/(.*)",
-      "dest": "/"
+      "dest": "/$1"
     }
   ]
 }
