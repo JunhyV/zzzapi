@@ -2,14 +2,30 @@
   "version": 2,
   "builds": [
     {
-      "src": "./index.js",
+      "src": "index.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
+      "src": "/disks/(.*)",
+      "dest": "/disks/$1"
+    },
+    {
+      "src": "/agents/(.*)",
+      "dest": "/agents/$1"
+    },
+    {
+      "src": "/bangboos/(.*)",
+      "dest": "/bangboos/$1"
+    },
+    {
+      "src": "/engines/(.*)",
+      "dest": "/engines/$1"
+    },
+    {
       "src": "/(.*)",
-      "dest": "/"
+      "dest": "/$1"
     }
   ]
 }
