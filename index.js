@@ -47,6 +47,7 @@ app.use(
 
 // Rutas de la app
 app.use("/", routes());
+app.use("/disks", routes());
 
 // Puerto
 app.listen(PORT, () => {
