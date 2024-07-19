@@ -1,5 +1,5 @@
 const express = require("express");
-const routes = require("./routes");
+const routes = require("./routes/routes");
 const mongoose = require("mongoose");
 const cors = require("cors");
 
@@ -17,7 +17,7 @@ const uri = process.env.DB_URL;
 
 // Conectar a MongoDB
 mongoose
-  .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(uri)
   .then(() => {
     console.log("Conexión a MongoDB exitosa");
   })
