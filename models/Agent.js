@@ -15,6 +15,7 @@ const AgentSchema = new Schema({
   stats: String,
   full_img: String,
   short_img: String,
+  build: String,
 });
 
 module.exports = mongoose.model("Agent", AgentSchema);
