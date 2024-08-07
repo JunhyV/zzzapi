@@ -1,8 +1,7 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
 
 // Model design
-const AgentSchema = new Schema({
+const AgentSchema = new mongoose.Schema({
   full_name: String,
   nickname: String,
   rank: String,

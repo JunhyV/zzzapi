@@ -7,7 +7,7 @@ const cors = require("cors");
 // Permitir solicitudes desde tu dominio de Vercel y localhost
 const allowedOrigins = [
   "https://zenless-guide.vercel.app",
-  "http://localhost:5173"
+  "http://localhost:5173",
 ];
 
 // Cargar variables de entorno desde .env
