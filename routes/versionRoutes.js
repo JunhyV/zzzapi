@@ -3,7 +3,7 @@ const router = express.Router();
 const VersionController = require("../controllers/VersionController");
 
 // Show all or find register
-router.get('/version', VersionController.showVersion);
+router.get('/version/:idVersion', VersionController.showVersion);
 
 // Create, Update & Delete
 router.post("/version", VersionController.newVersion);

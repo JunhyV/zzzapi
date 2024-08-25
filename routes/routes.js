@@ -33,7 +33,11 @@ router.get('/', (req, res) => {
         <li><a href="/bangboos">Banboos API</a></li>
         <li><a href="/engines">W-Engine API</a></li>
         <li><a href="/disks">Drive Disk Sets API</a></li>
-        <li><a href="/version">Drive Disk Sets API</a></li>
+        <li><a href="/version/66caa72ddceed153a9f0b083">Version API</a></li>
+        <li><a href="/codes">Code API</a></li>
+        <li><a href="/events">Events API</a></li>
+        <li><a href="/incomming">Incomming API</a></li>
+        <li><a href="/tiers">Tiers API</a></li>
         </ul>
       </body>
     </html>
