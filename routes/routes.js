@@ -4,11 +4,21 @@ const disksRoutes = require('./disksRoutes');
 const agentsRoutes = require('./agentsRoutes');
 const bangboosRoutes = require('./bangboosRoutes');
 const enginesRoutes = require('./enginesRoutes');
+const versionRoutes = require('./versionRoutes');
+const eventsRoutes = require('./eventsRoutes');
+const codesRoutes = require('./codesRoutes');
+const tiersRoutes = require('./tiersRoutes');
+const incommingRoutes = require('./incommingRoutes');
 
 router.use('/', disksRoutes);
 router.use('/', agentsRoutes);
 router.use('/', bangboosRoutes);
 router.use('/', enginesRoutes);
+router.use('/', versionRoutes);
+router.use('/', eventsRoutes);
+router.use('/', codesRoutes);
+router.use('/', tiersRoutes);
+router.use('/', incommingRoutes);
 
 router.get('/', (req, res) => {
   res.send(`
@@ -23,6 +33,7 @@ router.get('/', (req, res) => {
         <li><a href="/bangboos">Banboos API</a></li>
         <li><a href="/engines">W-Engine API</a></li>
         <li><a href="/disks">Drive Disk Sets API</a></li>
+        <li><a href="/version">Drive Disk Sets API</a></li>
         </ul>
       </body>
     </html>
